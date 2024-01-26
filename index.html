@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fashion store coming soon. Stay updated with announcements and launch deals.">
+	<meta name="keywords" content="fashion, store, coming soon, launch deals, announcements">
+	<link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<title>Base Apparel - Coming Soon</title>
+</head>
+
+<body>
+	<article class="wrapper">
+
+		<section class="label-section">
+			<img src="images/logo.svg" alt="BASE APPREL" />
+		</section>
+		<section class="img-section">
+			<picture>
+				<source media="(max-width:451px)" srcset="images/hero-mobile.jpg" />
+				<source media="(min-width: 451px)" srcset="images/hero-desktop.jpg" />
+				<img class="woman-img" src="images/hero-desktop.jpg" alt="img" />
+			</picture>
+		</section>
+		<section class="text-section">
+			<h1>
+				<span class="text-pink">WE'RE</span><br>
+				COMING<br>
+				SOON
+			</h1>
+			<p class="paragraph">Hello fellow shoppers! We're currently building our new
+				fashion store. Add your email below to stay
+				up-to-date
+				with announcements and our launch deals.</p>
+		</section>
+
+		<section class='email-section'>
+			<form class='form' novalidate onsubmit="validateEmail(event)">
+				<input type='email' class='input-email' id='email' name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+					placeholder='Email Address' />
+
+				<button class='btn' type='submit'><img class='icon-btn' src='images/icon-arrow.svg' alt='' /></button>
+			</form>
+			<p class='error-text'>
+				Please provide a valid email
+			</p>
+		</section>
+	</article>
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--DesaturatedRed: hsl(0, 36%, 70%);
+	--DarkGrayishRed: hsl(0, 6%, 24%);
+	--SoftRed: hsl(0, 93%, 68%);
+}
+html {
+	font-size: 14px;
+}
+.wrapper {
+	background: url("./images/bg-pattern-desktop.svg"), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	display: grid;
+	font-family: Josefin Sans, sans-serif;
+	height: 100dvh;
+}
+
+.label-section {
+	display: grid;
+	align-items: center;
+}
+.img-section {
+	width: 100%;
+}
+.text-section {
+	text-align: center;
+}
+
+.email-section {
+	position: relative;
+	margin: 0 3rem;
+}
+
+.label-section img {
+	padding-left: 1rem;
+	width: 8rem;
+}
+
+.woman-img {
+	width: 100%;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 600;
+	line-height: 2.6rem;
+	letter-spacing: 0.8rem;
+}
+.text-pink {
+	color: var(--DesaturatedRed);
+	font-weight: 300;
+}
+.paragraph {
+	font-size: 0.9rem;
+	color: var(--DesaturatedRed);
+	padding: 1rem 1rem 0;
+	line-height: 1.5rem;
+}
+
+.form {
+	display: flex;
+	height: 2.8rem;
+	position: relative;
+}
+.input-email {
+	width: 100%;
+	padding-left: 1.3rem;
+	border: none;
+	outline: none;
+	border-radius: 1.3rem;
+	border: var(--DesaturatedRed) solid 1px;
+}
+::placeholder {
+	color: var(--DesaturatedRed);
+	opacity: 0.7;
+}
+
+.btn {
+	height: 100%;
+	cursor: pointer;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	position: absolute;
+	border-radius: 1.3rem;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	padding: 0 1.5rem;
+	outline: none;
+	border: none;
+	right: 0;
+}
+.btn::before {
+	display: none;
+	content: "";
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	background: url("images/icon-error.svg") no-repeat 1.3rem center;
+	right: 5rem;
+}
+.icon-error-active::before {
+	display: block;
+	position: absolute;
+}
+
+.error-text {
+	display: none;
+}
+.error-text-active {
+	color: var(--SoftRed);
+	display: block;
+	padding: 0.5rem 1.3rem;
+	position: absolute;
+}
+
+@media (min-width: 451px) {
+	html {
+		font-size: 16px;
+	}
+	.wrapper {
+		margin: 0 auto;
+		max-width: 1400px;
+		grid-template-areas:
+			"label woman-img "
+			"title woman-img"
+			"email woman-img";
+		justify-items: center;
+	}
+
+	.label-section {
+		grid-area: label;
+		width: 45%;
+	}
+	.label-section img {
+		padding: 0;
+		width: 6rem;
+	}
+	.img-section {
+		grid-area: woman-img;
+		height: 99vh;
+	}
+	.img-section img {
+		height: 100%;
+		object-fit: cover;
+	}
+	.text-section {
+		grid-area: title;
+		width: 45%;
+		text-align: start;
+		align-self: center;
+	}
+	.paragraph {
+		padding: 1rem 0 0;
+	}
+
+	.email-section {
+		grid-area: email;
+		margin: 0;
+		width: 45%;
+	}
+	.btn {
+		padding: 0 2rem;
+	}
+	.btn:active {
+		background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 23%, 48%));
+	}
+}
